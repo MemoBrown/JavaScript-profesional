@@ -1,0 +1,16 @@
+{
+  "name": "media-player",
+  "version": "1.0.0",
+  "description": "Proyecto del Curos profesional de JavaScript",
+  "license": "MIT",
+  "author": "Guillermo Moreno <contact@memobrown.com>",
+  "keywords": [
+    "platzi"
+  ],
+  "scripts": {
+    "start": "live-server"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}
