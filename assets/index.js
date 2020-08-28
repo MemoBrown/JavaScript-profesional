@@ -9,11 +9,11 @@ const mute =document.getElementById("btn-mute");
 const player = new MediaPlayer({ 
     el: video, 
     plugins: [
-        // new AutoPlay()
+        new AutoPlay()
     ], 
 });
 
 
 play.onclick = () => player.play();
 pause.onclick = () => player.pause();
-mute.onclick = () => player.toggleMute();
+mute.onclick = () => player.toggleMuted();
