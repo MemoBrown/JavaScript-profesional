@@ -1,20 +1,20 @@
-function MediaPlayer(config) {
-    this.media = config.el
+class MediaPlayer {
+  constructor(config) {
+    this.media = config.el;
     this.plugins = config.plugins || [];
 
     this._initPlugins();
   }
-
-  MediaPlayer.prototype._initPlugins = function(){
+  _initPlugins() {
     const player = {
       play: () => this.play(),
       pause: () => this.pause(),
       media: this.media,
-      get muted(){
+      get muted() {
         return this.media.muted;
       },
 
-      set muted(value){
+      set muted(value) {
         this.media.muted = value;
       },
     };
@@ -22,27 +22,29 @@ function MediaPlayer(config) {
     this.plugins.forEach(plugin => {
       plugin.run(player);
     });
-  };
-  
-  MediaPlayer.prototype.play = function(){
+  }
+  play() {
     this.media.play();
   }
-  MediaPlayer.prototype.pause = function(){
+  pause() {
     this.media.pause();
   }
-  MediaPlayer.prototype.muted = function(){
+  muted() {
     this.media.muted = true;
   }
-  MediaPlayer.prototype.unmuted = function(){
+  unmuted() {
     this.media.muted = false;
   }
-  MediaPlayer.prototype.toggleMuted = function() {
+  toggleMuted() {
     if (this.media.muted) {
       this.unmuted();
     } else {
       this.muted();
     }
-  
+
   }
+}
+
+
 
   export default MediaPlayer
